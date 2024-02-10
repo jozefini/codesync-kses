@@ -1,0 +1,17 @@
+src
+node_modules
+.gitignore
+.github
+.changeset
+.vscode
+
+.env
+.env.\*
+.DS_Store
+.prettierrc
+.prettierignore
+.npmrc
+
+tsconfig.json
+tsup.config.ts
+
