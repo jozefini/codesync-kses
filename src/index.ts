@@ -1,4 +1,4 @@
-export async function sanitizeHTML(
+export async function kses(
   htmlString: string,
   allowedTags: Record<string, Record<string, boolean>>,
   allowedProtocols: string[]
