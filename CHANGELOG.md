@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.0.8
+
+### Patch Changes
+
+- 7bdc566: rsc
+
 ## 2.0.7
 
 ### Patch Changes
