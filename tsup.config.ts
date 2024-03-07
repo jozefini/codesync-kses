@@ -5,6 +5,7 @@ export default defineConfig({
     index: 'src/index.ts',
     rsc: 'src/rsc.ts',
   },
+  splitting: true,
   sourcemap: true,
   clean: true,
   dts: true,
