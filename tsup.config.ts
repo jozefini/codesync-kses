@@ -11,4 +11,5 @@ export default defineConfig({
   minify: true,
   format: ['cjs', 'esm'],
   outDir: 'dist',
+  external: ['@xmldom/xmldom'],
 })
