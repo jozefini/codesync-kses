@@ -1,24 +1,46 @@
 import { allowedPostTags, AllowedPostTags } from './allowedPostTags'
 import { traverseNode, validateArguments } from './utils'
 
-export async function kses(
+export function kses(
   htmlString: string,
   allowedTags: AllowedPostTags = allowedPostTags,
   allowedProtocols: string[] = ['http', 'https']
-): Promise<string> {
+): string {
+  if (typeof window === 'undefined') {
+    throw new Error('Use ksesServer() on the server')
+  }
   if (!validateArguments(htmlString, allowedTags, allowedProtocols)) {
     return ''
   }
 
-  let htmlDoc: Document
-  if (typeof window === 'undefined') {
-    const { JSDOM } = await import('jsdom')
-    const parser = new JSDOM(htmlString)
-    htmlDoc = parser.window.document
-  } else {
-    const parser = new DOMParser()
-    htmlDoc = parser.parseFromString(htmlString, 'text/html')
+  const parser = new DOMParser()
+  let htmlDoc = parser.parseFromString(htmlString, 'text/html')
+
+  Array.from(htmlDoc.body.children).forEach((child) =>
+    traverseNode(child as Element, allowedTags, allowedProtocols)
+  )
+
+  return htmlDoc.body.innerHTML
+}
+
+export async function ksesServer(
+  htmlString: string,
+  allowedTags: AllowedPostTags = allowedPostTags,
+  allowedProtocols: string[] = ['http', 'https']
+): Promise<string> {
+  if (typeof window !== 'undefined') {
+    throw new Error('Use kses() on the client')
   }
+  if (!validateArguments(htmlString, allowedTags, allowedProtocols)) {
+    return ''
+  }
+
+  const { DOMParser } = await import('@xmldom/xmldom')
+  const parser = new DOMParser()
+  let htmlDoc = parser.parseFromString(
+    `<!DOCTYPE html><body>${htmlString}</body>`,
+    'text/xml'
+  )
 
   Array.from(htmlDoc.body.children).forEach((child) =>
     traverseNode(child as Element, allowedTags, allowedProtocols)
