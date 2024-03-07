@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.0.3
+
+### Patch Changes
+
+- cd22c1d: rsc
+
 ## 2.0.2
 
 ### Patch Changes
