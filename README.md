@@ -9,7 +9,7 @@ Works in both Node.js and the browser.
 import { kses } from '@codesync/kses'
 
 const unsafeHtml = '<strong>Test parser</strong><script>alert("hello")</script>'
-const safeHtml = kses(html) // <strong>Test parser</strong>
+const safeHtml = kses(unsafeHtml) // <strong>Test parser</strong>
 ```
 
 #### Example React
