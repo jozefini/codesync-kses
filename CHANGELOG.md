@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- b140a94: rsc
+
+## 2.0.5
+
+### Patch Changes
+
 - 8e9dfb8: dev dep
 - f225f18: fix rsc
 
