@@ -1,4 +1,4 @@
-import { allowedPostTags, AllowedPostTags } from './index'
+import { allowedPostTags, AllowedPostTags } from './allowedPostTags'
 
 export async function kses(
   htmlString: string,
@@ -20,7 +20,9 @@ export async function kses(
 
   let htmlDoc
   if (typeof window === 'undefined') {
-    const { DOMParser } = await import('@xmldom/xmldom')
+    if (typeof DOMParser === 'undefined') {
+      throw new Error('DOMParser is not available in this environment')
+    }
     const parser = new DOMParser()
     htmlDoc = parser.parseFromString(
       `<!DOCTYPE html><body>${htmlString}</body>`,
