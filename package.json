@@ -1,7 +1,7 @@
 {
   "name": "@codesync/kses",
   "license": "MIT",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "WordPress equivalent of wp_kses for React and RSC",
   "publishConfig": {
     "access": "public"
@@ -28,13 +28,11 @@
     "@types/jsdom": "^21.1.6",
     "prettier": "^3.2.4",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "jsdom": "^24.0.0"
   },
   "bugs": {
     "url": "https://github.com/jozefini/kses-package/issues"
   },
-  "homepage": "https://github.com/jozefini/kses-package#readme",
-  "dependencies": {
-    "jsdom": "^24.0.0"
-  }
+  "homepage": "https://github.com/jozefini/kses-package#readme"
 }
