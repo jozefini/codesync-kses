@@ -25,3 +25,17 @@ export default function Page() {
   return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
 }
 ```
+
+#### Example RSC
+
+```typescript
+import { ksesServer } from '@codesync/kses'
+
+export default async function Page() {
+  const unsafeHtml =
+    '<strong>Test parser</strong><script>alert("hello")</script>'
+  const safeHtml = await ksesServer(unsafeHtml)
+
+  return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
+}
+```
