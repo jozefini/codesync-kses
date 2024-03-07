@@ -1,5 +1,12 @@
 # @codesync/kses
 
+## 2.0.5
+
+### Patch Changes
+
+- 8e9dfb8: dev dep
+- f225f18: fix rsc
+
 ## 2.0.3
 
 ### Patch Changes
