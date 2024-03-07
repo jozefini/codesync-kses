@@ -12,7 +12,7 @@
   ],
   "author": "Jozefini",
   "repository": {
-    "url": "git+https://github.com/jozefini/html-helpers-package.git"
+    "url": "git+https://github.com/jozefini/kses-package.git"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,9 +30,9 @@
     "typescript": "^5.3.3"
   },
   "bugs": {
-    "url": "https://github.com/jozefini/html-helpers-package/issues"
+    "url": "https://github.com/jozefini/kses-package/issues"
   },
-  "homepage": "https://github.com/jozefini/html-helpers-package#readme",
+  "homepage": "https://github.com/jozefini/kses-package#readme",
   "dependencies": {
     "@xmldom/xmldom": "^0.8.10"
   }
