@@ -2,7 +2,7 @@
   "name": "@codesync/kses",
   "license": "MIT",
   "version": "0.0.1",
-  "description": "HTML Sanitizer",
+  "description": "WordPress equivalent of wp_kses for React and RSC",
   "publishConfig": {
     "access": "public"
   },
