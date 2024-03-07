@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.0.4
+
+### Patch Changes
+
+- f225f18: fix rsc
+
 ## 2.0.3
 
 ### Patch Changes
