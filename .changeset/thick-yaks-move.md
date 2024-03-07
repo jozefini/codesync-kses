@@ -1,0 +1,5 @@
+---
+"@codesync/kses": major
+---
+
+kses
