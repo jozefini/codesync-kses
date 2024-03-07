@@ -1,4 +1,4 @@
-## Equivalent of WordPress's KSES in JavaScript/Node.js
+## Equivalent of `wp_kses`/`wp_kses_post` in JavaScript/Node.js
 
 Safely render HTML in React or any other JavaScript environment.
 Works in both Node.js and the browser.
