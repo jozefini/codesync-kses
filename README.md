@@ -29,12 +29,12 @@ export default function Page() {
 #### Example RSC
 
 ```typescript
-import { ksesServer } from '@codesync/kses'
+import { kses } from '@codesync/kses/server'
 
-export default async function Page() {
+export default function Page() {
   const unsafeHtml =
     '<strong>Test parser</strong><script>alert("hello")</script>'
-  const safeHtml = await ksesServer(unsafeHtml)
+  const safeHtml = kses(unsafeHtml)
 
   return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
 }

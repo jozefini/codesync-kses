@@ -1,4 +1,4 @@
-import { AllowedPostTags } from './allowedPostTags'
+import { AllowedPostTags } from './postTags'
 
 export function validateArguments(
   htmlString: string,
