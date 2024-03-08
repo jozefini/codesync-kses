@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.1.2
+
+### Patch Changes
+
+- 10521be: minify build
+
 ## 2.1.1
 
 ### Patch Changes
