@@ -41,23 +41,24 @@ export function kses(
     }
 
     const newAttrs: { [key: string]: string } = {}
-    for (const [attrName, attrValue] of Object.entries(
+    for (const [attrNameRaw, attrValue] of Object.entries(
       $node.get(0).attribs
     ) as any) {
-      let validAttr = validAttrs[attrName.toLowerCase()]
-
-      if (!validAttr) {
-        continue
-      }
+      const attrName = attrNameRaw.toLowerCase()
+      let validAttr = validAttrs[attrName]
 
       for (const attrPattern in validAttrs) {
         if (
           attrPattern.endsWith('*') &&
-          attrName.toLowerCase().startsWith(attrPattern.slice(0, -1))
+          attrName.startsWith(attrPattern.slice(0, -1))
         ) {
           validAttr = 1
           break
         }
+      }
+
+      if (!validAttr) {
+        continue
       }
 
       if (validAttr && allowedProtocols && ['href', 'src'].includes(attrName)) {
@@ -71,7 +72,6 @@ export function kses(
     }
 
     $node.get(0).attribs = newAttrs
-
     $node.children().each((_: any, child: any) => traverseNode($(child)))
   }
 

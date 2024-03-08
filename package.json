@@ -1,7 +1,7 @@
 {
   "name": "@codesync/kses",
   "license": "MIT",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "WordPress equivalent of wp_kses for React and RSC",
   "publishConfig": {
     "access": "public"
