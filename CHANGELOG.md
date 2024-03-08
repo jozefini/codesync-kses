@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.1.0
+
+### Minor Changes
+
+- 4d66583: separate server
+
 ## 2.0.12
 
 ### Patch Changes
