@@ -1,10 +1,22 @@
-import { allowedPostTags, AllowedPostTags } from './postTags'
 import { validateArguments } from './utils'
+import {
+  AllowedTags,
+  AllowedProtocols,
+  allowedPostTags,
+  allowedPostProtocols,
+} from './postTags'
+
+export {
+  AllowedTags,
+  AllowedProtocols,
+  allowedPostTags as allowedTags,
+  allowedPostProtocols as allowedProtocols,
+}
 
 export function kses(
   htmlString: string,
-  allowedTags: AllowedPostTags = allowedPostTags,
-  allowedProtocols: string[] = ['http', 'https']
+  allowedTags: AllowedTags = allowedPostTags,
+  allowedProtocols: AllowedProtocols = allowedPostProtocols
 ): string {
   if (typeof window === 'undefined') {
     throw new Error('Use server version of kses() from `@codesync/kses/server`')

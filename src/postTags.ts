@@ -1,5 +1,6 @@
-type AllowedAttribute = Record<string, 1 | 0>
-export type AllowedPostTags = Record<string, AllowedAttribute>
+export type AllowedAttribute = Record<string, 1 | 0>
+export type AllowedTags = Record<string, AllowedAttribute>
+export type AllowedProtocols = string[]
 
 const ariaProps: AllowedAttribute = {
   'aria-controls': 1,
@@ -27,7 +28,8 @@ const commonProps: AllowedAttribute = {
   'xml:lang': 1,
 }
 
-export const allowedPostTags: AllowedPostTags = {
+export const allowedPostProtocols: AllowedProtocols = ['http', 'https']
+export const allowedPostTags: AllowedTags = {
   address: { ...commonProps },
   a: {
     href: 1,
