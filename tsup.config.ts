@@ -7,6 +7,7 @@ export default defineConfig({
   },
   splitting: true,
   sourcemap: true,
+  minify: true,
   clean: false,
   dts: true,
   outDir: './',
