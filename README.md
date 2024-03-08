@@ -9,19 +9,22 @@ Works in both Node.js and the browser.
 import { kses } from '@codesync/kses'
 
 const unsafeHtml = '<strong>Test parser</strong><script>alert("hello")</script>'
-const safeHtml = kses(unsafeHtml) // <strong>Test parser</strong>
+const safeHtml = kses(unsafeHtml)
+// Output: <strong>Test parser</strong>
 ```
 
 #### Example React
 
 ```typescript
+'use client'
 import { kses } from '@codesync/kses'
 
-export default function Page() {
+export default function ClientPage() {
   const unsafeHtml =
     '<strong>Test parser</strong><script>alert("hello")</script>'
   const safeHtml = kses(unsafeHtml)
 
+  // Output: <div><strong>Test parser</strong></div>
   return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
 }
 ```
@@ -31,11 +34,12 @@ export default function Page() {
 ```typescript
 import { kses } from '@codesync/kses/server'
 
-export default function Page() {
+export default function ServerPage() {
   const unsafeHtml =
     '<strong>Test parser</strong><script>alert("hello")</script>'
   const safeHtml = kses(unsafeHtml)
 
+  // Output: <div><strong>Test parser</strong></div>
   return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
 }
 ```
