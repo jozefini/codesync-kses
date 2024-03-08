@@ -20,8 +20,8 @@
   "scripts": {
     "build": "tsup",
     "lint": "tsc",
-    "publish": "pnpm publish --no-git-checks",
-    "release": "pnpm run build && pnpm publish"
+    "publish": "pnpm publish",
+    "release": "pnpm run build && pnpm publish --no-git-checks"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
