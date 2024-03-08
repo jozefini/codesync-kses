@@ -1,5 +1,11 @@
 # @codesync/kses
 
+## 2.1.1
+
+### Patch Changes
+
+- b4c9856: readme
+
 ## 2.1.0
 
 ### Minor Changes
